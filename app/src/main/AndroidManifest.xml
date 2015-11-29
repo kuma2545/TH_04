@@ -4,7 +4,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
@@ -19,11 +19,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".VoloListView01"
-            android:label="@string/title_activity_volo_list_view01"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
-        <activity
             android:name=".VoloDetail"
             android:label="@string/title_activity_volo_detail"
             android:theme="@style/AppTheme.NoActionBar" >
@@ -32,6 +27,14 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".SendActyvity"
+            android:label="@string/title_activity_send_actyvity" >
+        </activity>
+        <activity
+            android:name=".Splash"
+            android:label="@string/title_activity_splash" >
         </activity>
     </application>
 

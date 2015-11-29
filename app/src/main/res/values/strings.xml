@@ -3,4 +3,8 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_volo_list_view01">VoloListView01</string>
     <string name="title_activity_volo_detail">VoloDetail</string>
+    <string name="title_activity_send_actyvity">SendActyvity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_splash">Splash</string>
 </resources>

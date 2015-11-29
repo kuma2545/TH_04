@@ -1,30 +1,54 @@
 package com.example.wairo.volo;
-//最終確認画面
+
+/**
+ * Created by OGi on 2015/11/28.
+ */
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 
-public class MainActivity extends Activity{
+public class MainActivity extends Activity {
+    ListView lv;
 
+    /**
+     * Called when the activity is first created.
+     */
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        // ウィジェットと結び付ける文
-        Button btnNext=(Button) findViewById(R.id.sendButton);
-        btnNext.setOnClickListener(new OnClickListener() {
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),
-                       "送信に成功しました", Toast.LENGTH_LONG).show();
-                // スっ飛ばすインテントの生成
-                Intent intent=new Intent(MainActivity.this,VoloListView01.class);//送信先（VoloListView01）
-                // 実行
+        setContentView(R.layout.content_volo_list_view01);
+
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line);
+        adapter.add("Apple");
+        adapter.add("orange");
+        adapter.add("strawberry");
+        adapter.add("volunteer");
+        adapter.add("walker");
+        adapter.add("tree");
+        adapter.add("aaaa");
+        adapter.add("bbbb");
+        adapter.add("hello");
+
+        ListView lv = (ListView) findViewById(R.id.voloListView);
+        lv.setAdapter(adapter);
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(MainActivity.this, VoloDetail.class);
                 startActivity(intent);
+
             }
+
+
         });
+
     }
+
 }
